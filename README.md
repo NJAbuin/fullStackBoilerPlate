@@ -17,7 +17,7 @@ ____________________________________________________________________________
 :::FRONTEND GUIDE:::
 Frontend managed on /src
 Add styles to styles.scss,
-Add components to /src/components and render them in index.js
+Add components to /src/components and render them inside Main component 
 ____________________________________________________________________________
 
 \\\\\\ NO NEED TO TOUCH DIST FOLDER DIRECTLY, contains bundle output ///////
