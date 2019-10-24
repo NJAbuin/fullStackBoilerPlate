@@ -1,5 +1,5 @@
-import { Sequelize } from "sequelize/types";
-import db from "../index";
+const Sequelize = require("sequelize");
+const db = require("../index");
 
 const Model = Sequelize.Model;
 
@@ -11,7 +11,7 @@ User.init(
       allowNUll: false
     },
     age: {
-      type: Sequelize.NUMBER
+      type: Sequelize.INTEGER
     }
   },
   {
