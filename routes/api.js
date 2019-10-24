@@ -1,12 +1,8 @@
 const api = require("express").Router();
 const User = require("../db/models/User");
 
-const mockResponse = {
-  foo: "bar",
-  bar: "foo"
-};
-
 //DELETE THIS ROUTES BEFORE DEPLOYING/////////////////
+//EDIT THE SEED TO SUIT YOUR MODEL REQUIREMENTS
 api.get("/seed", (req, res) => {
   User.bulkCreate([
     {
@@ -21,17 +17,25 @@ api.get("/seed", (req, res) => {
       firstName: "Fede",
       age: 36
     }
-  ]).then(data => res.json(data));
+  ])
+    .then(data => res.json(data))
+    .catch(err => console.log(`Failed to seed db :: ERROR: ${err}`));
 });
 
 api.get("/destroydb", (req, res) => {
-  User.destroy({ where: {} }).then(data => res.redirect("/"));
+  User.destroy({ where: {} })
+    .then(data => res.redirect("/"))
+    .catch(err => err => console.log(`Failed to destroy db :: ERROR: ${err}`));
 });
 
 //////////////////////////////////////////////////////////
 
-api.get("/", (req, res) => {
-  res.send(mockResponse);
+api.get("/users", (req, res) => {
+  User.findAll()
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => console.log("Failed to retrieve users at /api/users"));
 });
 
 module.exports = api;
