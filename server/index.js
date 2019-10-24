@@ -7,7 +7,7 @@ const db = require("../db");
 const DIST_DIR = path.join(__dirname, "../dist");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 2222;
 
 //bodyparsing middleware
 app.use(bodyParser.urlencoded({ extended: true }));
