@@ -1,5 +1,5 @@
 # fullStackBoilerPlate
-includes sequelize db, express server, react, babel &amp; css styles
+includes sequelize db, express server, react, react-redux store, babel, css styles
 ____________________________________________________________________________
 :::QUICK GUIDE:::
 npm install
@@ -16,7 +16,7 @@ Add new Models to /db/models directory
 ____________________________________________________________________________
 :::FRONTEND GUIDE:::
 Frontend managed on /src
-Add styles to styles.scss,
+Add styles to styles.css,
 Add components to /src/components and render them inside Main component 
 ____________________________________________________________________________
 
