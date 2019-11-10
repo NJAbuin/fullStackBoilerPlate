@@ -1,5 +1,5 @@
 # fullStackBoilerPlate
-includes sequelize db, express server, react, babel &amp; sass styles
+includes sequelize db, express server, react, babel &amp; css styles
 ____________________________________________________________________________
 :::QUICK GUIDE:::
 npm install
