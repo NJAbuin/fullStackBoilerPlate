@@ -3,6 +3,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const db = require("../db");
+const chalk = require("chalk");
 
 const DIST_DIR = path.join(__dirname, "../dist");
 
@@ -25,7 +26,9 @@ app.use("/", require("../routes/index"));
 //sync database then start server
 db.sync()
   .then(() => {
-    console.log("Connected to database...");
-    app.listen(port, () => console.log(`Listening on port ${port}`));
+    console.log(chalk.black.bgGreen.bold("Connected to database..."));
+    app.listen(port, () =>
+      console.log(chalk.black.bgWhite.bold(`Listening on port ${port}`))
+    );
   })
   .catch(console.error); //error catcher
