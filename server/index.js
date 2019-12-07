@@ -24,7 +24,7 @@ app.use("/api", require("../routes/api"));
 app.use("/", require("../routes/index"));
 
 //sync database then start server
-db.sync()
+db.sync({ force: false })
   .then(() => {
     console.log(chalk.black.bgGreen.bold("Connected to database..."));
     app.listen(port, () =>

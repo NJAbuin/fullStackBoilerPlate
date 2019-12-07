@@ -1,28 +1,20 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import List from "../components/List";
+import ProductSelect from "./ProductSelect";
+
 import axios from "axios";
 
-export default class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      list: [] //array of user objects
-    };
-  }
+export default function Main() {
+  const [products, setProducts] = useState([]);
 
-  componentDidMount() {
-    //TEMPLATE ON HOW TO MAKE API REQUESTS TO BACKEND
-    axios.get("/api/users").then(response => {
-      this.setState({ list: response.data });
-    });
-  }
+  useEffect(() => {
+    axios.get("/api/products").then(res => setProducts(res.data));
+  }, []);
 
-  render() {
-    return (
-      <div>
-        LISTA DE USUARIOS
-        <List list={this.state.list} />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>NUI Shipping App</h1>
+      <List productList={products} />
+    </div>
+  );
 }
