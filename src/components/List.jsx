@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function List({ productList }) {
+export default function List({ countryList }) {
   return (
     <div>
       <ul>
-        {productList.map(e => {
-          return <li key={e.id}>{e.name}</li>; //TEMPLATE ON HOW TO map props to html items
+        {countryList.map(country => {
+          return <li key={country.id}>{country.name}</li>; //TEMPLATE ON HOW TO map props to html items
         })}
       </ul>
     </div>

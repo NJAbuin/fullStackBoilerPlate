@@ -1,20 +1,19 @@
-const { Product } = require("../db/models");
 const api = require("express").Router();
+const { Country } = require("../db/models");
 
 //DELETE THIS ROUTES BEFORE DEPLOYING/////////////////
 //EDIT THE SEED TO SUIT YOUR MODEL REQUIREMENTS
 api.get("/seed", (req, res) => {
-  Product.create({
-    name: "Chromebox 5196058",
-    weight: 1.5,
-    price: 360.0
-  }).then(products => res.send(products));
+  Country.create({ name: "Brazil" })
+    .then(country => res.send(`country created`))
+    .catch(country => res.send(`error creating ${country}`));
 });
 
 //////////////////////////////////////////////////////////
-
-api.get("/products", (req, res) => {
-  Product.findAll().then(product => res.json(product));
+api.get("/countries", (req, res) => {
+  Country.findAll()
+    .then(countries => res.send(countries))
+    .catch(countries => res.send("Error fetching countries"));
 });
 
 module.exports = api;
