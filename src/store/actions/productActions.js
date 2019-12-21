@@ -1,15 +1,15 @@
 import axios from "axios";
 import {} from "../constants";
 
-export const getProducts = () => dispatch => {
+export const getCountries = () => dispatch => {
   //   axios
-  //     .get(`/api/products`)
+  //     .get(`/api/countries`)
   //     .then(res => res.data)
   //     .then(response => {
-  //       return dispatch(productAction(response));
+  //       return dispatch(countryAction(response));
   //     });
 };
 
-const productAction = payload => {
+const countryAction = payload => {
   return { type: "", payload };
 };

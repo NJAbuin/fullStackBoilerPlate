@@ -2,11 +2,11 @@ import {} from "../constants";
 
 const initialState = [];
 
-export const productsReducer = (state = initialState, action) => {
+export const countriesReducer = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export const getProducts = state => state.products;
+export const getCountries = state => state.countries;
